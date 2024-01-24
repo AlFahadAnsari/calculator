@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> calculator </title>
+
+    <style>
+
+            .bb{
+                border-radius:10px;
+                margin: 5px;
+                padding: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .show{
+                
+                padding: 15px;
+                padding-right: 122px;
+                font-size: larger;
+                
+            }
+
+            h1{
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .all{
+                text-align: center;
+                margin: auto;
+                position: relative;
+                
+            }
+
+            #bt1,#bt2,#bt3,#bt4,#bt8,#bt12,#bt16{
+                background-color: pink;
+            }
+
+            #bt20{
+                background-color: rgb(241, 31, 101);
+            }
+
+           
+
+    </style>
+</head>
+<body>
+
+
+    <h1> calculator </h1>
+
+    <table id="calcu" class="all">
+
+       <tr>
+        <td  colspan="4"> <input type="text" id="result" class="show"></td>
+       </tr> 
+
+       <br>
+       <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX first row XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+       <tr>
+
+            <td> <input type="button"  id="bt1"  class="bb" value="🆑" onclick="clr()"
+                onkeydown="my(even)" > </td>
+
+            <td><input type="button" value="⬅️" id="bt2"  class="bb" onclick="cancel()"
+                    onkeydown="my(even)"></td>
+             
+            <td> <input type="button" value="+" id="bt3"  class="bb" onclick="disp('+')"
+                onkeydown="my(even)"></td>
+
+                <td> <input type="button" value="/" id="bt4"  class="bb" onclick="disp('/')"
+                    onkeydown="my(even)"></td>
+
+       </tr>
+
+       <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX second row XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+        <tr>
+
+            <td> <input type="button" value="7" id="bt5"  class="bb" onclick="disp('7')"
+                onkeydown="my(even)"></td>
+
+            <td> <input type="button" value="8" id="bt6"  class="bb" onclick="disp('8')"
+                onkeydown="my(even)"></td>
+
+                <td> <input type="button" value="9" id="bt7"  class="bb" onclick="disp('9')"
+                    onkeydown="my(even)"></td>
+
+                    <td> <input type="button" value="*" id="bt8"  class="bb" onclick="disp('*')"
+                        onkeydown="my(even)"></td>
+        </tr>
+
+
+
+          <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX third row XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+          <tr>
+
+            <td> <input type="button" value="4" id="bt9"  class="bb" onclick="disp('4')"
+                onkeydown="my(even)"></td>
+
+                <td><input type="button" value="5" id="bt10"  class="bb" onclick="disp('5')"
+                    onkeydown="my(even)"></td>
+
+                    <td> <input type="button" value="6" id="bt11"  class="bb" onclick="disp('6')"
+                        onkeydown="my(even)"></td>
+
+                        <td> <input type="button" value="-" id="bt12"  class="bb" onclick="disp('-')"
+                            onkeydown="my(even)"></td>
+
+          </tr>
+
+
+
+            <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 4 row XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+          <tr>
+
+            <td> <input type="button" value="1" id="bt13" class="bb" onclick="disp('1')"
+                onkeydown="my(even)"></td>
+
+                <td> <input type="button" value="2" id="bt14" class="bb" onclick="disp('2')"
+                    onkeydown="my(even)"></td>
+
+                    <td> <input type="button" value="3" id="bt15" class="bb" onclick="disp('3')"
+                        onkeydown="my(even)"></td>
+
+                        <td> <input type="button" value="+" id="bt16" class="bb" onclick="disp('+')"
+                            onkeydown="my(even)"></td>
+
+          </tr>
+
+
+            <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 5 row XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+
+
+
+            <tr>
+
+                <td> <input type="button" value="%" id="bt17" class="bb" onclick="percentage('%')"
+                    onkeydown="my(even)"></td>
+
+                    <td> <input type="button" value="0" id="bt18" class="bb" onclick="disp('0')"
+                        onkeydown="my(even)"></td>
+
+                        <td> <input type="button" value="." id="bt19" class="bb" onclick="disp('.')"
+                            onkeydown="my(even)"></td>
+
+
+                            <td> <input type="button" value="=" id="bt20" class="bb" onclick="equal()"
+                                onkeydown="my(even)"></td>
+
+            </tr>
+
+    </table>
+
+
+    <script>
+            var x=document.getElementById("result");
+                 function disp(v)        
+        {
+        x.value += v;
+        }
+        function clr()
+        {
+        x.value = "";
+        }
+
+     function equal()
+        {
+        x.value = eval(x.value);
+        }
+        function cancel()
+        {
+        console.log(x.value.length-1);
+        x.value = x.value.substr(0,x.value.length-1);
+        }
+        </script>
+
+
+       
+</body>
+</html>
